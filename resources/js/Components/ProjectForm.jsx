@@ -79,6 +79,9 @@ export default function ProjectForm({ form, categories, onSubmit, submitLabel, c
 
       <FormField id="project_url" label="Project link" optional error={errors.project_url}>
         <input {...a11y('project_url')} type="url" placeholder="https://" value={data.project_url ?? ''} onChange={(e) => setData('project_url', e.target.value)} className={inputClass} />
+      </FormField> 
+        <FormField id="repository_url" label="Repository link" optional error={errors.repository_url}>
+        <input {...a11y('repository_url')} type="url" placeholder="https://" value={data.repository_url ?? ''} onChange={(e) => setData('repository_url', e.target.value)} className={inputClass} />
       </FormField>
 
       <FormField id="image" label="Cover image" optional={Boolean(currentImageUrl)} error={errors.image}
@@ -89,6 +92,7 @@ export default function ProjectForm({ form, categories, onSubmit, submitLabel, c
           <img src={preview ?? currentImageUrl} alt={preview ? 'Preview of the new image' : 'Current image'} className="mt-3 h-32 rounded-md border border-ink/10 object-cover dark:border-chalk/10" />
         )}
       </FormField>
+        
 
       <FormField id="image_alt" label="Image description (alt text)" error={errors.image_alt} hint="What the image shows, for visitors using a screen reader.">
         <input {...a11y('image_alt')} type="text" value={data.image_alt} onChange={(e) => setData('image_alt', e.target.value)} className={inputClass} />

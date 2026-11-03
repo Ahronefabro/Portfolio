@@ -116,6 +116,8 @@ class ProjectController extends Controller
             'image_alt' => ['required', 'string', 'min:10', 'max:200'],
             'date_completed' => ['required', 'date', 'before_or_equal:today'],
             'display_order' => ['required', 'integer', 'between:1,99'],
+            'repository_url' => ['nullable', 'url:http,https', 'max:255'], // Added repository_url validation
+            
         ];
     }
 
@@ -138,6 +140,7 @@ class ProjectController extends Controller
             'image_alt.required' => 'Describe the image for visitors who use a screen reader.',
             'date_completed.before_or_equal' => 'The completion date cannot be in the future.',
             'display_order.between' => 'The display order must be a number from 1 to 99.',
+            'repository_url.url' => 'The repository link must be a full web address starting with http:// or https://.',
         ];
     }
 }

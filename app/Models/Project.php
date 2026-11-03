@@ -21,6 +21,7 @@ class Project extends Model
         'image_alt',
         'date_completed',
         'display_order',
+        'repository_url', // Added repository_url to fillable
     ];
 
     // Sent to React along with the columns

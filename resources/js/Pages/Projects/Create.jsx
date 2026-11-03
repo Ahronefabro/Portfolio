@@ -13,6 +13,7 @@ export default function Create({ categories, nextOrder }) {
     image_alt: '',
     date_completed: '',
     display_order: nextOrder,
+    repository_url: '', // Added repository_url to the form state
   });
 
   // forceFormData: send as multipart so the image file is included

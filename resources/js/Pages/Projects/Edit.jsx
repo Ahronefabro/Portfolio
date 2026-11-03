@@ -13,6 +13,7 @@ export default function Edit({ project, categories }) {
     image_alt: project.image_alt,
     date_completed: project.date_completed,
     display_order: project.display_order,
+    'repository_url': project.repository_url ?? '', // Added repository_url to the form state
   });
 
   // Browsers can't send files with a real PUT request, so this POSTs with _method=put
